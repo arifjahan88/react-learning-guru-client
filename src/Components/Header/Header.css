@@ -1,0 +1,13 @@
+.header_details h1{
+    font-size: 70px;
+}
+.header_details p{
+    font-size: 20px;
+}
+
+@media screen and (Max-height: 667px) {
+    .header_image{
+        width: 350px;
+    }
+    
+}
