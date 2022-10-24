@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 const Navber = () => {
   return (
@@ -19,22 +20,30 @@ const Navber = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Nav.Link href="#deets">Home</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
+              <Link className="text-decoration-none text-white me-3" to="/">
+                Home
+              </Link>
+              <Link
+                className="text-decoration-none text-white me-3"
+                to="courses"
+              >
                 Courses
-              </Nav.Link>
-              <Nav.Link eventKey={3} href="#memes">
+              </Link>
+              <Link className="text-decoration-none text-white me-3" to="faq">
                 FAQ
-              </Nav.Link>
-              <Nav.Link eventKey={4} href="#memes">
+              </Link>
+              <Link className="text-decoration-none text-white me-3" to="blogs">
                 Blogs
-              </Nav.Link>
-              <Nav.Link eventKey={5} href="#memes">
+              </Link>
+              <Link className="text-decoration-none text-white me-3" to="login">
                 LogIn
-              </Nav.Link>
-              <Nav.Link eventKey={6} href="#memes">
+              </Link>
+              <Link
+                className="text-decoration-none text-white me-3"
+                to="logout"
+              >
                 SignUp
-              </Nav.Link>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

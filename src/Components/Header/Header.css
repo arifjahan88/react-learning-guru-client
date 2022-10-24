@@ -4,10 +4,26 @@
 .header_details p{
     font-size: 20px;
 }
+.header_details{
+    width: 50%;
+}
 
 @media screen and (Max-height: 667px) {
-    .header_image{
-        width: 350px;
+    .header_image img{
+        width: 300px;
     }
+    .header_details h1{
+        font-size: 40px;
+    }
+    .header_details p{
+        font-size: 15px;
+    }
+    .header_image{
+        margin-top: 50px;
+    }
+    .header_details{
+        width: 100%;
+    }
+    
     
 }
