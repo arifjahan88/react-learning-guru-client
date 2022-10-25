@@ -1,8 +1,10 @@
 import React from "react";
 import { useContext } from "react";
+import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 
@@ -27,7 +29,7 @@ const Navber = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
-            <Nav>
+            <Nav className="d-flex align-items-center">
               <Link className="text-decoration-none text-white me-3" to="/">
                 Home
               </Link>
@@ -69,6 +71,17 @@ const Navber = () => {
                   </Link>
                 </>
               )}
+              <Link>
+                {user?.photoURL ? (
+                  <Image
+                    roundedCircle
+                    style={{ height: "40px" }}
+                    src={user?.photoURL}
+                  ></Image>
+                ) : (
+                  <FaUser></FaUser>
+                )}
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
