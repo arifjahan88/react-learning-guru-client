@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaRegMoon, FaLightbulb } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 
 const Navber = () => {
   const { logOut, user } = useContext(AuthContext);
+  const [open, setopen] = useState(true);
   const HandlelogoutClick = () => {
     logOut()
       .then(() => {})
@@ -80,6 +81,25 @@ const Navber = () => {
                   ></Image>
                 ) : (
                   <FaUser></FaUser>
+                )}
+              </Link>
+              <Link className="ms-2 text-decoration-none ">
+                {open ? (
+                  <div
+                    className="d-flex align-items-center mt-1"
+                    onClick={() => setopen(!open)}
+                  >
+                    <FaLightbulb></FaLightbulb>
+                    <span>Light</span>
+                  </div>
+                ) : (
+                  <div
+                    className="d-flex align-items-center mt-1"
+                    onClick={() => setopen(!open)}
+                  >
+                    <FaRegMoon></FaRegMoon>
+                    <span>Dark</span>
+                  </div>
                 )}
               </Link>
             </Nav>
