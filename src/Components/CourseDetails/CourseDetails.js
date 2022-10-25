@@ -3,12 +3,21 @@ import { Link, useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Row } from "react-bootstrap";
-import { FaEye, FaStar } from "react-icons/fa";
+import { FaDownload, FaEye, FaStar } from "react-icons/fa";
+import { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import toast from "react-hot-toast";
 
 const CourseDetails = () => {
   const detailsdata = useLoaderData();
+  const componentref = useRef();
+  const Handlepdf = useReactToPrint({
+    content: () => componentref.current,
+    documentTitle: "Courses-Data",
+    onAfterPrint: () => toast.success("Download Success"),
+  });
   return (
-    <div>
+    <div ref={componentref}>
       <h2>this is course {detailsdata.length}</h2>
       <Row lg="2" className="mt-2">
         {detailsdata.map((detail) => (
@@ -16,6 +25,15 @@ const CourseDetails = () => {
             <Card className="text-center span-3 bg-light border border-success span-2 mb-4 border-opacity-10 rounded-3 shadow-sm bg-body rounded">
               <Card.Header>
                 <div className="d-flex justify-content-end">
+                  <div className="me-2">
+                    <Button
+                      onClick={Handlepdf}
+                      size="sm"
+                      variant="outline-primary"
+                    >
+                      Download <FaDownload></FaDownload>
+                    </Button>{" "}
+                  </div>
                   <Link
                     to={`/checkout/${detail.id}`}
                     className="text-decoration-none"
