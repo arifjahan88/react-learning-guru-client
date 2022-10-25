@@ -3,9 +3,13 @@ import { useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FaEye } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const CheckOut = () => {
   const data = useLoaderData();
+  const Handletoast = () => {
+    toast.success("Cheaked Out Successfully!!");
+  };
 
   return (
     <div>
@@ -14,7 +18,9 @@ const CheckOut = () => {
         <Card.Body>
           <Card.Title>{data.title}</Card.Title>
           <Card.Text>{data.details}</Card.Text>
-          <Button variant="primary">Cheaked Out</Button>
+          <Button onClick={Handletoast} variant="primary">
+            Cheaked Out
+          </Button>
         </Card.Body>
         <Card.Footer className="text-muted">
           <div className="d-flex justify-content-between">

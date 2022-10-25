@@ -14,17 +14,17 @@ const LeftSideNav = () => {
     <div className="mt-3">
       {categories.map((category) => (
         <p key={category.id}>
-          <button
-            type="button"
-            className="btn btn-light border border-secondary w-100 border-opacity-25"
+          <Link
+            className="text-black text-decoration-none"
+            to={`/coursesdetails/${category.id}`}
           >
-            <Link
-              className="text-black text-decoration-none"
-              to={`/coursesdetails/${category.id}`}
+            <button
+              type="button"
+              className="btn btn-light border border-secondary w-100 border-opacity-25"
             >
               {category.coursename}
-            </Link>
-          </button>
+            </button>
+          </Link>
         </p>
       ))}
     </div>

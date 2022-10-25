@@ -7,13 +7,12 @@ import { FaEye, FaStar } from "react-icons/fa";
 
 const CourseDetails = () => {
   const detailsdata = useLoaderData();
-  console.log(detailsdata);
   return (
     <div>
       <h2>this is course {detailsdata.length}</h2>
       <Row lg="2" className="mt-2">
         {detailsdata.map((detail) => (
-          <div>
+          <div key={detail.id}>
             <Card className="text-center span-3 bg-light border border-success span-2 mb-4 border-opacity-10 rounded-3 shadow-sm bg-body rounded">
               <Card.Header>
                 <div className="d-flex justify-content-end">
