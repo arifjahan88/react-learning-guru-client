@@ -1,10 +1,18 @@
 import React from "react";
+import { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/AuthProvider";
 
 const Navber = () => {
+  const { logOut, user } = useContext(AuthContext);
+  const HandlelogoutClick = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <Navbar
@@ -35,15 +43,32 @@ const Navber = () => {
               <Link className="text-decoration-none text-white me-3" to="blogs">
                 Blogs
               </Link>
-              <Link className="text-decoration-none text-white me-3" to="login">
-                LogIn
-              </Link>
-              <Link
-                className="text-decoration-none text-white me-3"
-                to="logout"
-              >
-                SignUp
-              </Link>
+              {user?.uid ? (
+                <>
+                  <span className="text-white me-2">{user?.displayName}</span>
+                  <Link
+                    onClick={HandlelogoutClick}
+                    className="text-decoration-none text-white me-3"
+                  >
+                    LogOut
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    className="text-decoration-none text-white me-3"
+                    to="login"
+                  >
+                    LogIn
+                  </Link>
+                  <Link
+                    className="text-decoration-none text-white me-3"
+                    to="register"
+                  >
+                    SignUp
+                  </Link>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
