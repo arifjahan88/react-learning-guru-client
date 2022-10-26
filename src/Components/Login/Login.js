@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { loginuser } = useContext(AuthContext);
@@ -30,6 +31,7 @@ const Login = () => {
         form.reset();
         seterror("");
         navigate(from, { replece: true });
+        toast.success("LogIn Successful!");
       })
       .catch((error) => {
         console.error(error);

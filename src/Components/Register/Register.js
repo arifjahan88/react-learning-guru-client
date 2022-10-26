@@ -8,6 +8,7 @@ import Image from "react-bootstrap/Image";
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { createUser, googlelogin, githublogin, updateUserProfile } =
@@ -27,6 +28,7 @@ const Register = () => {
         seterror("");
         form.reset();
         profileUpdateinfo(name, photourl);
+        toast.success("Registration Successful!");
       })
       .catch((error) => {
         console.error(error);
@@ -38,6 +40,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Registration Successful!");
       })
       .catch((error) => console.error(error));
   };
@@ -46,6 +49,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Registration Successful!");
       })
       .catch((error) => console.error(error));
   };

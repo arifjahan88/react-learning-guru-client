@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { Spinner } from "react-bootstrap";
+import toast from "react-hot-toast";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthProvider";
 
@@ -13,7 +14,14 @@ const PrivateRoutes = ({ children }) => {
   }
 
   if (!user) {
-    return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
+    return (
+      <>
+        {toast.error("Please Log In First! !", {
+          position: "bottom-center",
+        })}
+        <Navigate to="/login" state={{ from: location }} replace></Navigate>
+      </>
+    );
   }
   return children;
 };
