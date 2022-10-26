@@ -18,7 +18,10 @@ const CourseDetails = () => {
   });
   return (
     <div ref={componentref}>
-      <h2>this is course {detailsdata.length}</h2>
+      <h2 className="text-center my-4  text-danger fw-bold">
+        Here {detailsdata.length} Courses Available
+        <hr />
+      </h2>
       <Row lg="2" className="mt-2">
         {detailsdata.map((detail) => (
           <div key={detail.id}>

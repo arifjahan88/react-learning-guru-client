@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import PageNotFound from "../Components/404Route/PageNotFound";
 import Blogs from "../Components/Blogs/Blogs";
 import CheckOut from "../Components/Checkout/CheckOut";
 import CourseDetails from "../Components/CourseDetails/CourseDetails";
@@ -7,8 +8,10 @@ import Faq from "../Components/Faq/Faq";
 import Header from "../Components/Header/Header";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import TearmsandConditions from "../Components/TearmsandConditions/TearmsandConditions";
 import Coursesfix from "../Layout/Coursesfix";
 import Main from "../Layout/Main";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const routes = createBrowserRouter([
   {
@@ -40,6 +43,10 @@ export const routes = createBrowserRouter([
         path: "register",
         element: <Register></Register>,
       },
+      {
+        path: "tearms",
+        element: <TearmsandConditions></TearmsandConditions>,
+      },
     ],
   },
   {
@@ -54,10 +61,18 @@ export const routes = createBrowserRouter([
       },
       {
         path: "checkout/:id",
-        element: <CheckOut></CheckOut>,
+        element: (
+          <PrivateRoutes>
+            <CheckOut></CheckOut>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/coursedetails/${params.id}`),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
   },
 ]);

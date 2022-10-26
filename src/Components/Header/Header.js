@@ -13,9 +13,9 @@ const Header = () => {
         </h1>
         <p>
           Unsure about the best course to take? You're covered by me. Find the
-          ideal course for you by perusing the available options. It's gratis!
-          Code With Harry is my attempt to quickly teach people the fundamentals
-          of coding and other skills that took me a very long time to learn.
+          ideal course for you by perusing the available options. It's great!
+          Now This is my attempt to quickly teach people the fundamentals of
+          coding and other skills that took you a very long time to learn.
         </p>
 
         <Link to="courses" className="me-2">

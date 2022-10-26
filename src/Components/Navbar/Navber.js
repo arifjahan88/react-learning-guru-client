@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { FaUser, FaRegMoon, FaLightbulb } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
+import navlogo from "./../Image/navlogo.png";
 
 const Navber = () => {
   const { logOut, user } = useContext(AuthContext);
@@ -26,7 +27,15 @@ const Navber = () => {
         variant="dark"
       >
         <Container>
-          <Navbar.Brand href="#home">Learning Guru</Navbar.Brand>
+          <Navbar.Brand className="fw-bold text-info" href="#">
+            <img
+              src={navlogo}
+              width="60"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+            Learning <span className="text-danger">Guru</span>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>

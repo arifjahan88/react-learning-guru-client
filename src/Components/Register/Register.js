@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -10,7 +10,9 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const { createUser, googlelogin, githublogin } = useContext(AuthContext);
+  const { createUser, googlelogin, githublogin, updateUserProfile } =
+    useContext(AuthContext);
+  const [error, seterror] = useState("");
   const ClickHundleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,11 +24,14 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        seterror("");
         form.reset();
+        profileUpdateinfo(name, photourl);
       })
-      .catch((error) => console.error(error));
-
-    console.log(name, photourl, email, password);
+      .catch((error) => {
+        console.error(error);
+        seterror(error.message);
+      });
   };
   const HandlegoogleClick = () => {
     googlelogin()
@@ -42,6 +47,15 @@ const Register = () => {
         const user = result.user;
         console.log(user);
       })
+      .catch((error) => console.error(error));
+  };
+  const profileUpdateinfo = (name, photourl) => {
+    const profile = {
+      displayName: name,
+      photoURL: photourl,
+    };
+    updateUserProfile(profile)
+      .then(() => {})
       .catch((error) => console.error(error));
   };
   return (
@@ -91,13 +105,9 @@ const Register = () => {
                   placeholder="Enter your Password"
                   required
                 />
-                <Form.Text className="text-muted">
-                  Don't share your password to others.
-                </Form.Text>
+                <Form.Text className="text-danger">{error}</Form.Text>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
+
               <Button variant="primary" type="submit">
                 Submit
               </Button>
