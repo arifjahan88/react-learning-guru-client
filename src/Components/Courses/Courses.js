@@ -10,7 +10,7 @@ const Courses = () => {
 
   return (
     <div>
-      <div className="text-center fs-1 fw-bold courses">OUR COURSES</div>
+      <div className="text-center fw-bold courses">OUR COURSES</div>
       <Container>
         <Row>
           <Col lg="3">

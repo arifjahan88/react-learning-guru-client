@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FaEye } from "react-icons/fa";
@@ -18,9 +18,14 @@ const CheckOut = () => {
         <Card.Body>
           <Card.Title>{data.title}</Card.Title>
           <Card.Text>{data.details}</Card.Text>
-          <Button onClick={Handletoast} variant="primary">
-            Cheaked Out
-          </Button>
+          <div>
+            <Button onClick={Handletoast} variant="outline-success">
+              Checked Out
+            </Button>{" "}
+            <Link to="/courses">
+              <Button variant="outline-info">Back to Courses</Button>{" "}
+            </Link>
+          </div>
         </Card.Body>
         <Card.Footer className="text-muted">
           <div className="d-flex justify-content-between">

@@ -1,9 +1,21 @@
 .courses{
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-table-overlooking-office-stationery-image_259709.jpg");
-    padding: 100px;
+    background-image: url("https://media.tenor.com/zFYlcnyDzhkAAAAd/student-studying.gif");
+    padding: 200px;
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: contain;
+    height: 500px;
     opacity: 0.75;
+    color: rgb(255, 157, 29);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
     
+}
+
+@media screen and (max-width:667px) {
+    .courses{
+        font-size: 50px;
+        padding: 50px;
+    }
     
 }

@@ -16,6 +16,9 @@ const CourseDetails = () => {
     documentTitle: "Courses-Data",
     onAfterPrint: () => toast.success("Download Success"),
   });
+  const handlereadmore = () => {
+    toast.error("Please get premium Access");
+  };
   return (
     <div ref={componentref}>
       <h2 className="text-center my-4  text-danger fw-bold">
@@ -54,13 +57,13 @@ const CourseDetails = () => {
               <Card.Img variant="top" src={detail.image_url} />
               <Card.Body>
                 <Card.Title>{detail.title}</Card.Title>
-                <Card.Text>{detail.details.slice(0, 200) + "..."}</Card.Text>
-                <Link to={`/checkout/${detail.id}`}>
-                  <Button variant="primary">Read More</Button>
-                </Link>
+                <Card.Text>
+                  {detail.details.slice(0, 200) + "..."}
+                  <Link onClick={handlereadmore}>read more</Link>
+                </Card.Text>
               </Card.Body>
               <Card.Footer className="text-muted">
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-around">
                   <div>
                     <span>Author : {detail.author.name}</span>
                     <span className="ms-2">
