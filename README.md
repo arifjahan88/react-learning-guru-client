@@ -1,5 +1,3 @@
-# Getting Started All Link
-
 ### GitHub Client Link
 
 [https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-arifjahan88](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-arifjahan88)
