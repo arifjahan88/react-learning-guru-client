@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Register.css";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -11,8 +10,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, googlelogin, githublogin, updateUserProfile } =
-    useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, seterror] = useState("");
   const ClickHundleSubmit = (event) => {
     event.preventDefault();
@@ -35,24 +33,7 @@ const Register = () => {
         seterror(error.message);
       });
   };
-  const HandlegoogleClick = () => {
-    googlelogin()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        toast.success("Registration Successful!");
-      })
-      .catch((error) => console.error(error));
-  };
-  const HandleGithubClick = () => {
-    githublogin()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        toast.success("Registration Successful!");
-      })
-      .catch((error) => console.error(error));
-  };
+
   const profileUpdateinfo = (name, photourl) => {
     const profile = {
       displayName: name,
@@ -115,28 +96,7 @@ const Register = () => {
               <Button variant="primary" type="submit">
                 Submit
               </Button>
-              <div className="mt-4 d-lg-flex justify-content-center">
-                <div onClick={HandlegoogleClick} className="google-btn me-2">
-                  <div className="google-icon-wrapper">
-                    <img
-                      className="google-icon"
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="btn-text">Sign in with google</p>
-                </div>
-                <div onClick={HandleGithubClick} className="github-btn">
-                  <div className="google-icon-wrapper">
-                    <img
-                      className="google-icon"
-                      src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                      alt=""
-                    />
-                  </div>
-                  <p className="btn-text">Sign in with GitHub</p>
-                </div>
-              </div>
+
               <div className="text-center mt-2">
                 <Link to="/login">Already Have an Acoount</Link>
               </div>

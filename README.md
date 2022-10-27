@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Getting Started All Link
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### GitHub Client Link
 
-## Available Scripts
+[https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-arifjahan88](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-arifjahan88)
 
-In the project directory, you can run:
+### GitHub Server Link
 
-### `npm start`
+[https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-arifjahan88](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-arifjahan88)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Live Server Link
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[https://react-programming-courses.web.app/](https://react-programming-courses.web.app/)
 
-### `npm test`
+## My Work in this project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. First I am create a react project in client site.
+2. Then I am create a server site using express where i am load my data in two categories which are Coursecategories and Coursedetails and after my all fake data create, start my server with nodemon.
+3. Now time to work client side. In Client side firstly I ready my templete and design it with react-Bootstrap which is Css react framework. In my project i made a online learning platform which name is "Learnig Guru". so, here i load my all data in courses directory.
+4. Create a login and register page in using firebase authentication.
+5. Make blog directory with some question wich are provided us.
+6. Making a 404 route.
+7. I am also work firebase key hide, toggle Black/Dark mode, conditional login/logout.

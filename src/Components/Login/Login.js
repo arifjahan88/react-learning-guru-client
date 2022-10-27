@@ -9,9 +9,10 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import "./Login.css";
 
 const Login = () => {
-  const { loginuser } = useContext(AuthContext);
+  const { loginuser, googlelogin, githublogin } = useContext(AuthContext);
   const [accept, setaccept] = useState(false);
   const [error, seterror] = useState("");
   const navigate = useNavigate();
@@ -42,6 +43,24 @@ const Login = () => {
 
   const Handlecheaked = (event) => {
     setaccept(event.target.checked);
+  };
+  const HandlegoogleClick = () => {
+    googlelogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("Registration Successful!");
+      })
+      .catch((error) => console.error(error));
+  };
+  const HandleGithubClick = () => {
+    githublogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("Registration Successful!");
+      })
+      .catch((error) => console.error(error));
   };
   return (
     <div className="mt-5">
@@ -88,6 +107,28 @@ const Login = () => {
               <Button variant="primary" type="submit" disabled={!accept}>
                 Submit
               </Button>
+              <div className="mt-4 d-lg-flex justify-content-center">
+                <div onClick={HandlegoogleClick} className="google-btn me-2">
+                  <div className="google-icon-wrapper">
+                    <img
+                      className="google-icon"
+                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                      alt=""
+                    />
+                  </div>
+                  <p className="btn-text">Sign in with google</p>
+                </div>
+                <div onClick={HandleGithubClick} className="github-btn">
+                  <div className="google-icon-wrapper">
+                    <img
+                      className="google-icon"
+                      src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="btn-text">Sign in with GitHub</p>
+                </div>
+              </div>
               <div className="text-center">
                 <Link to="/register">Don't Have Account!</Link>
               </div>
