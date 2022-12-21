@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import loginimage from "./../Image/loginform.png";
 import Image from "react-bootstrap/Image";
-import { useContext } from "react";
-import { AuthContext } from "../../Contexts/AuthProvider";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Contexts/AuthProvider";
+import loginimage from "./../Image/loginform.png";
 import "./Login.css";
 
 const Login = () => {
@@ -49,7 +47,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        toast.success("Registration Successful!");
+        toast.success("Login Successful!");
       })
       .catch((error) => console.error(error));
   };

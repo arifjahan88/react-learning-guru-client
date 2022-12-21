@@ -1,14 +1,10 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const LeftSideNav = () => {
   const [categories, setcategories] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://react-programming-courses-server.vercel.app/coursecategories"
-    )
+    fetch("http://localhost:5000/coursecategories")
       .then((res) => res.json())
       .then((data) => setcategories(data));
   }, []);

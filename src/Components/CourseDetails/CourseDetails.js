@@ -1,12 +1,11 @@
-import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React, { useRef } from "react";
+import { Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Row } from "react-bootstrap";
-import { FaDownload, FaEye, FaStar } from "react-icons/fa";
-import { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
 import toast from "react-hot-toast";
+import { FaDownload, FaEye, FaStar } from "react-icons/fa";
+import { Link, useLoaderData } from "react-router-dom";
+import { useReactToPrint } from "react-to-print";
 
 const CourseDetails = () => {
   const detailsdata = useLoaderData();
@@ -14,7 +13,6 @@ const CourseDetails = () => {
   const Handlepdf = useReactToPrint({
     content: () => componentref.current,
     documentTitle: "Courses-Data",
-    onAfterPrint: () => toast.success("Download Success"),
   });
   const handlereadmore = () => {
     toast.error("Please get premium Access");
